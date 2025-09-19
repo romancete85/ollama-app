@@ -3,7 +3,7 @@ from flask import Flask, request, render_template_string
 from openai import OpenAI
 from dotenv import load_dotenv
 
-load_dotenv() # Load environment variables from .env file
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
 
