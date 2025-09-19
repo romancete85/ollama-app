@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
-app = Flask(__name__)
+app = Flask(__name__)  # QA Test deployment
 
 client = OpenAI(
     api_key=os.environ.get("OPENAI_API_KEY"),
