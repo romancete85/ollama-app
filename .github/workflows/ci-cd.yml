@@ -76,6 +76,8 @@ jobs:
     name: 🧪 Automated Testing
     runs-on: ubuntu-latest
     needs: quality-check
+    env: 
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Secret for testing
     
     strategy:
       matrix:
@@ -99,7 +101,7 @@ jobs:
     - name: 🏗️ Create Test Environment
       run: |
         echo "🏗️ Setting up test environment..."
-        export OPENAI_API_KEY="test-key-for-ci"
+        # variables from .env.example or defaults
         export LLM_ENDPOINT="https://api.openai.com/v1"
         export MODEL="gpt-3.5-turbo"
         export PORT=3001
